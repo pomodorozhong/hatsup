@@ -65,15 +65,13 @@ One run of a template.
   - **Solo:** prompts, timer, and controls for the person running the session
   - **Group:** hat color + name dominate the screen, with a large timer, so people across a table can read the current hat
 
-**Timer (proposed default)**
+### Timer
 
-Templates already have per-hat durations, so the timer is a **countdown for the active hat**.
+While a hat is active, its timer counts down from that hat’s planned duration. Pause and resume as needed.
 
-- Counts down from that hat’s duration
-- Pause / resume
-- When time hits zero: haptic + optional sound; the hat **stays active** until the user advances (no auto-advance)
-- Overtime counts up past zero so the digest can record actual time spent
-- Also show remaining hats / remaining planned time so the facilitator can see the rest of the agenda
+At zero, the phone nudges (haptic, optional sound) but does **not** advance the hat. Time then counts up as overtime; the digest records time actually spent, not the plan.
+
+The session also shows how many hats are left and how much planned time remains.
 
 ### Hat prompts
 
