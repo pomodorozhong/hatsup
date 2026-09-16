@@ -6,6 +6,8 @@
   "scripts": {
     "build": "tailwindcss -i ./styles.css -o ./dist/styles.css --minify",
     "dev": "tailwindcss -i ./styles.css -o ./dist/styles.css --watch",
+    "serve": "serve --listen tcp://0.0.0.0:8000 .",
+    "start": "npm run build && npm run serve",
     "check": "node --check app.js"
   },
   "keywords": [],
@@ -14,6 +16,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@tailwindcss/cli": "^4.3.3",
+    "serve": "^14.2.6",
     "tailwindcss": "^4.3.3"
   }
 }
