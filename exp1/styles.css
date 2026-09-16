@@ -1,3 +1,12 @@
+@import "tailwindcss";
+
+@source "./index.html";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Playfair Display", serif;
+}
+
 :root {
   --ink: #191919;
   --paper: #f5f1e8;
