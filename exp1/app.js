@@ -39,7 +39,24 @@ const hats = {
 
 const dialog = document.querySelector(".hat-dialog");
 const closeButton = document.querySelector(".close-button");
+const hatCards = document.querySelectorAll(".hat-card");
+const hatChips = document.querySelectorAll("[data-activate]");
 let trigger = null;
+
+function activateHat(key, selectedChip) {
+  hatChips.forEach((chip) => {
+    const isSelected = chip === selectedChip;
+    chip.classList.toggle("is-active", isSelected);
+    chip.setAttribute("aria-pressed", String(isSelected));
+  });
+
+  hatCards.forEach((card) => {
+    const isActive = card.dataset.open === key;
+    card.classList.toggle("is-active", isActive);
+    if (isActive) card.setAttribute("aria-current", "true");
+    else card.removeAttribute("aria-current");
+  });
+}
 
 function openHat(key) {
   const hat = hats[key];
@@ -68,6 +85,10 @@ function openHat(key) {
 
 document.querySelectorAll("[data-open]").forEach((button) => {
   button.addEventListener("click", () => openHat(button.dataset.open));
+});
+
+hatChips.forEach((chip) => {
+  chip.addEventListener("click", () => activateHat(chip.dataset.activate, chip));
 });
 
 closeButton.addEventListener("click", () => dialog.close());
