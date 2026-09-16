@@ -54,8 +54,12 @@ function openHat(key) {
   dialog.querySelector(".prompt-list").replaceChildren(
     ...hat.prompts.map((text) => {
       const item = document.createElement("div");
-      item.className = "prompt";
-      item.textContent = text;
+      item.className = "flex items-start gap-3 rounded border border-[#e1dcd2] bg-white px-3 py-2.5 text-sm";
+      const arrow = document.createElement("span");
+      arrow.className = "font-bold text-[var(--dialog-color)]";
+      arrow.ariaHidden = "true";
+      arrow.textContent = "→";
+      item.append(arrow, text);
       return item;
     })
   );

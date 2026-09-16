@@ -3,134 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta
-      name="description"
-      content="An interactive Six Thinking Hats cheat sheet for clearer group thinking."
-    />
+    <meta name="description" content="An interactive Six Thinking Hats cheat sheet for clearer group thinking." />
     <title>Six Hats — Think from every angle</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@1,600&amp;display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@1,600&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="dist/styles.css" />
   </head>
-  <body>
-    <main class="app-shell">
-      <header class="topbar">
-        <a class="brand" href="#" aria-label="Six Hats home">
-          <span class="brand-mark" aria-hidden="true">6</span>
+  <body class="paper-texture min-h-dvh font-sans short-landscape:overflow-hidden">
+    <main class="mx-auto flex min-h-dvh w-full max-w-[1600px] flex-col px-5 sm:px-8 lg:px-12 short-landscape:h-dvh short-landscape:min-h-0 short-landscape:px-5">
+      <header class="flex h-16 shrink-0 items-center border-b border-[#d9d3c7] sm:h-20 short-landscape:h-12">
+        <a class="flex items-center gap-2.5 text-lg font-bold" href="#" aria-label="Six Hats home">
+          <span class="grid size-8 place-items-center rounded-full bg-[#191919] font-display italic text-white" aria-hidden="true">6</span>
           <span>Six Hats</span>
         </a>
-        <p class="mode"><span aria-hidden="true"></span> Thinking mode</p>
-        <button class="help-button" type="button" data-open="blue" aria-label="How to use Six Hats">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.35 2.35 0 1 1 3.4 2.1c-.8.4-1.2.9-1.2 1.9M12 16.8h.01"/></svg>
-          How it works
+        <p class="ml-8 hidden border-l border-[#d9d3c7] pl-8 text-xs tracking-wide text-[#827d74] sm:block">
+          <span class="mr-2 inline-block size-1.5 rounded-full bg-[#49a469] shadow-[0_0_0_4px_rgb(73_164_105_/_12%)]" aria-hidden="true"></span>
+          Thinking mode
+        </p>
+        <button class="ml-auto flex items-center gap-2 rounded-full px-2 py-2 text-sm font-semibold transition hover:bg-black/5 focus-visible:outline-2 focus-visible:outline-offset-2 sm:px-3" type="button" data-open="blue" aria-label="How to use Six Hats">
+          <svg class="size-4 fill-none stroke-current [stroke-linecap:round] [stroke-width:1.7]" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.35 2.35 0 1 1 3.4 2.1c-.8.4-1.2.9-1.2 1.9M12 16.8h.01"/></svg>
+          <span class="hidden sm:inline">How it works</span>
         </button>
       </header>
 
-      <section class="intro" aria-labelledby="page-title">
-        <p class="eyebrow">A VISUAL CHEAT SHEET</p>
-        <h1 id="page-title">Think from <em>every angle.</em></h1>
-        <p>Six modes. One clearer conversation. Pick a hat to shift your perspective.</p>
+      <section class="py-8 text-center sm:py-12 lg:py-14 short-landscape:hidden" aria-labelledby="page-title">
+        <p class="mb-3 text-[10px] font-bold tracking-[0.23em] text-[#8a8479] sm:mb-4">A VISUAL CHEAT SHEET</p>
+        <h1 id="page-title" class="text-[clamp(2.5rem,5vw,4.25rem)] font-semibold leading-none tracking-[-0.045em]">Think from <em class="font-display">every angle.</em></h1>
+        <p class="mx-auto mt-4 text-sm text-[#716d65] sm:mt-5 sm:text-base">Six modes. One clearer conversation. Pick a hat to shift your perspective.</p>
       </section>
 
-      <section class="hat-grid" aria-label="The six thinking hats">
-        <button class="hat-card white" type="button" data-open="white">
-          <span class="number">01</span>
-          <span class="hat-art" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></span>
-          <span class="card-copy"><strong>White Hat</strong><span class="card-tagline">Facts <span class="tagline-amp">&amp;</span> information</span></span>
-          <span class="arrow" aria-hidden="true">↗</span>
+      <section class="grid grid-cols-2 overflow-hidden rounded border border-[#cec8bd] bg-white/20 md:grid-cols-3 xl:grid-cols-6 short-landscape:min-h-0 short-landscape:flex-1 short-landscape:grid-cols-6 short-landscape:[&_.hat-art]:my-1 short-landscape:[&_.hat-art]:h-16 short-landscape:[&_.hat-art]:w-16 short-landscape:[&_.hat-card]:min-h-0 short-landscape:[&_.hat-card]:p-2.5 short-landscape:[&_.hat-card_.arrow]:hidden short-landscape:[&_.hat-card_strong]:text-sm short-landscape:[&_.hat-card_.tagline]:text-[9px]" aria-label="The six thinking hats">
+        <button class="hat-card white group relative flex min-h-56 flex-col overflow-hidden border-b border-r border-[#d4cec3] p-4 text-left transition-colors before:absolute before:inset-0 before:bg-[var(--hat)] before:opacity-0 before:transition-opacity hover:text-[var(--hat-text)] hover:before:opacity-100 focus-visible:z-10 focus-visible:text-[var(--hat-text)] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:before:opacity-100 sm:min-h-64 sm:p-5 lg:min-h-72 xl:min-h-80" type="button" data-open="white">
+          <span class="relative z-10 text-[10px] font-semibold tracking-widest text-[#918b80] group-hover:text-current">01</span>
+          <span class="hat-art relative z-10 mx-auto my-5 block h-[105px] w-[clamp(82px,8vw,126px)] transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:-rotate-2" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></span>
+          <span class="relative z-10 mt-auto flex flex-col gap-1 text-center"><strong class="text-xl font-bold">White Hat</strong><span class="tagline text-xs text-[#7e786e] group-hover:text-current group-hover:opacity-70">Facts &amp; information</span></span>
+          <span class="arrow absolute bottom-4 right-4 z-10 translate-x-[-5px] translate-y-[5px] opacity-0 transition-all group-hover:translate-0 group-hover:opacity-100" aria-hidden="true">↗</span>
         </button>
-        <button class="hat-card red" type="button" data-open="red">
-          <span class="number">02</span>
-          <span class="hat-art" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></span>
-          <span class="card-copy"><strong>Red Hat</strong><span class="card-tagline">Feelings <span class="tagline-amp">&amp;</span> intuition</span></span>
-          <span class="arrow" aria-hidden="true">↗</span>
+        <button class="hat-card red group relative flex min-h-56 flex-col overflow-hidden border-b border-r border-[#d4cec3] p-4 text-left transition-colors before:absolute before:inset-0 before:bg-[var(--hat)] before:opacity-0 before:transition-opacity hover:text-[var(--hat-text)] hover:before:opacity-100 focus-visible:z-10 focus-visible:text-[var(--hat-text)] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:before:opacity-100 sm:min-h-64 sm:p-5 lg:min-h-72 xl:min-h-80" type="button" data-open="red">
+          <span class="relative z-10 text-[10px] font-semibold tracking-widest text-[#918b80] group-hover:text-current">02</span>
+          <span class="hat-art relative z-10 mx-auto my-5 block h-[105px] w-[clamp(82px,8vw,126px)] transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:-rotate-2" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></span>
+          <span class="relative z-10 mt-auto flex flex-col gap-1 text-center"><strong class="text-xl font-bold">Red Hat</strong><span class="tagline text-xs text-[#7e786e] group-hover:text-current group-hover:opacity-70">Feelings &amp; intuition</span></span>
+          <span class="arrow absolute bottom-4 right-4 z-10 translate-x-[-5px] translate-y-[5px] opacity-0 transition-all group-hover:translate-0 group-hover:opacity-100" aria-hidden="true">↗</span>
         </button>
-        <button class="hat-card black" type="button" data-open="black">
-          <span class="number">03</span>
-          <span class="hat-art" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></span>
-          <span class="card-copy"><strong>Black Hat</strong><span class="card-tagline">Risks <span class="tagline-amp">&amp;</span> caution</span></span>
-          <span class="arrow" aria-hidden="true">↗</span>
+        <button class="hat-card black group relative flex min-h-56 flex-col overflow-hidden border-b border-r border-[#d4cec3] p-4 text-left transition-colors before:absolute before:inset-0 before:bg-[var(--hat)] before:opacity-0 before:transition-opacity hover:text-[var(--hat-text)] hover:before:opacity-100 focus-visible:z-10 focus-visible:text-[var(--hat-text)] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:before:opacity-100 sm:min-h-64 sm:p-5 lg:min-h-72 xl:min-h-80" type="button" data-open="black">
+          <span class="relative z-10 text-[10px] font-semibold tracking-widest text-[#918b80] group-hover:text-current">03</span>
+          <span class="hat-art relative z-10 mx-auto my-5 block h-[105px] w-[clamp(82px,8vw,126px)] transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:-rotate-2" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></span>
+          <span class="relative z-10 mt-auto flex flex-col gap-1 text-center"><strong class="text-xl font-bold">Black Hat</strong><span class="tagline text-xs text-[#7e786e] group-hover:text-current group-hover:opacity-70">Risks &amp; caution</span></span>
+          <span class="arrow absolute bottom-4 right-4 z-10 translate-x-[-5px] translate-y-[5px] opacity-0 transition-all group-hover:translate-0 group-hover:opacity-100" aria-hidden="true">↗</span>
         </button>
-        <button class="hat-card yellow" type="button" data-open="yellow">
-          <span class="number">04</span>
-          <span class="hat-art" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></span>
-          <span class="card-copy"><strong>Yellow Hat</strong><span class="card-tagline">Value <span class="tagline-amp">&amp;</span> optimism</span></span>
-          <span class="arrow" aria-hidden="true">↗</span>
+        <button class="hat-card yellow group relative flex min-h-56 flex-col overflow-hidden border-b border-r border-[#d4cec3] p-4 text-left transition-colors before:absolute before:inset-0 before:bg-[var(--hat)] before:opacity-0 before:transition-opacity hover:text-[var(--hat-text)] hover:before:opacity-100 focus-visible:z-10 focus-visible:text-[var(--hat-text)] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:before:opacity-100 sm:min-h-64 sm:p-5 lg:min-h-72 xl:min-h-80" type="button" data-open="yellow">
+          <span class="relative z-10 text-[10px] font-semibold tracking-widest text-[#918b80] group-hover:text-current">04</span>
+          <span class="hat-art relative z-10 mx-auto my-5 block h-[105px] w-[clamp(82px,8vw,126px)] transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:-rotate-2" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></span>
+          <span class="relative z-10 mt-auto flex flex-col gap-1 text-center"><strong class="text-xl font-bold">Yellow Hat</strong><span class="tagline text-xs text-[#7e786e] group-hover:text-current group-hover:opacity-70">Value &amp; optimism</span></span>
+          <span class="arrow absolute bottom-4 right-4 z-10 translate-x-[-5px] translate-y-[5px] opacity-0 transition-all group-hover:translate-0 group-hover:opacity-100" aria-hidden="true">↗</span>
         </button>
-        <button class="hat-card green" type="button" data-open="green">
-          <span class="number">05</span>
-          <span class="hat-art" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></span>
-          <span class="card-copy"><strong>Green Hat</strong><span class="card-tagline">Ideas <span class="tagline-amp">&amp;</span> creativity</span></span>
-          <span class="arrow" aria-hidden="true">↗</span>
+        <button class="hat-card green group relative flex min-h-56 flex-col overflow-hidden border-b border-r border-[#d4cec3] p-4 text-left transition-colors before:absolute before:inset-0 before:bg-[var(--hat)] before:opacity-0 before:transition-opacity hover:text-[var(--hat-text)] hover:before:opacity-100 focus-visible:z-10 focus-visible:text-[var(--hat-text)] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:before:opacity-100 sm:min-h-64 sm:p-5 lg:min-h-72 xl:min-h-80" type="button" data-open="green">
+          <span class="relative z-10 text-[10px] font-semibold tracking-widest text-[#918b80] group-hover:text-current">05</span>
+          <span class="hat-art relative z-10 mx-auto my-5 block h-[105px] w-[clamp(82px,8vw,126px)] transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:-rotate-2" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></span>
+          <span class="relative z-10 mt-auto flex flex-col gap-1 text-center"><strong class="text-xl font-bold">Green Hat</strong><span class="tagline text-xs text-[#7e786e] group-hover:text-current group-hover:opacity-70">Ideas &amp; creativity</span></span>
+          <span class="arrow absolute bottom-4 right-4 z-10 translate-x-[-5px] translate-y-[5px] opacity-0 transition-all group-hover:translate-0 group-hover:opacity-100" aria-hidden="true">↗</span>
         </button>
-        <button class="hat-card blue" type="button" data-open="blue">
-          <span class="number">06</span>
-          <span class="hat-art" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></span>
-          <span class="card-copy"><strong>Blue Hat</strong><span class="card-tagline">Process <span class="tagline-amp">&amp;</span> control</span></span>
-          <span class="arrow" aria-hidden="true">↗</span>
+        <button class="hat-card blue group relative flex min-h-56 flex-col overflow-hidden border-b border-r border-[#d4cec3] p-4 text-left transition-colors before:absolute before:inset-0 before:bg-[var(--hat)] before:opacity-0 before:transition-opacity hover:text-[var(--hat-text)] hover:before:opacity-100 focus-visible:z-10 focus-visible:text-[var(--hat-text)] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:before:opacity-100 sm:min-h-64 sm:p-5 lg:min-h-72 xl:min-h-80" type="button" data-open="blue">
+          <span class="relative z-10 text-[10px] font-semibold tracking-widest text-[#918b80] group-hover:text-current">06</span>
+          <span class="hat-art relative z-10 mx-auto my-5 block h-[105px] w-[clamp(82px,8vw,126px)] transition-transform duration-300 group-hover:-translate-y-1.5 group-hover:-rotate-2" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></span>
+          <span class="relative z-10 mt-auto flex flex-col gap-1 text-center"><strong class="text-xl font-bold">Blue Hat</strong><span class="tagline text-xs text-[#7e786e] group-hover:text-current group-hover:opacity-70">Process &amp; control</span></span>
+          <span class="arrow absolute bottom-4 right-4 z-10 translate-x-[-5px] translate-y-[5px] opacity-0 transition-all group-hover:translate-0 group-hover:opacity-100" aria-hidden="true">↗</span>
         </button>
       </section>
 
-      <footer class="bottom-bar">
-        <div class="order-capsule" aria-label="Premade hat order 1">
-          <span class="order-caption">ORDER 01</span>
-          <div class="order-track" role="list" aria-label="Blue Hat, White Hat, Green Hat, Yellow Hat, Black Hat, Red Hat, Blue Hat">
-            <span class="order-step blue" role="listitem" aria-label="Blue Hat">
-              <span class="order-circle" aria-hidden="true">BL</span><span class="order-name">Blue</span>
-            </span>
-            <span class="order-arrow" aria-hidden="true">→</span>
-            <span class="order-step white" role="listitem" aria-label="White Hat">
-              <span class="order-circle" aria-hidden="true">WH</span><span class="order-name">White</span>
-            </span>
-            <span class="order-arrow" aria-hidden="true">→</span>
-            <span class="order-step green" role="listitem" aria-label="Green Hat">
-              <span class="order-circle" aria-hidden="true">GN</span><span class="order-name">Green</span>
-            </span>
-            <span class="order-arrow" aria-hidden="true">→</span>
-            <span class="order-step yellow" role="listitem" aria-label="Yellow Hat">
-              <span class="order-circle" aria-hidden="true">YL</span><span class="order-name">Yellow</span>
-            </span>
-            <span class="order-arrow" aria-hidden="true">→</span>
-            <span class="order-step black" role="listitem" aria-label="Black Hat">
-              <span class="order-circle" aria-hidden="true">BK</span><span class="order-name">Black</span>
-            </span>
-            <span class="order-arrow" aria-hidden="true">→</span>
-            <span class="order-step red" role="listitem" aria-label="Red Hat">
-              <span class="order-circle" aria-hidden="true">RD</span><span class="order-name">Red</span>
-            </span>
-            <span class="order-arrow" aria-hidden="true">→</span>
-            <span class="order-step blue" role="listitem" aria-label="Blue Hat">
-              <span class="order-circle" aria-hidden="true">BL</span><span class="order-name">Blue</span>
-            </span>
+      <footer class="py-6 text-[10px] tracking-wide text-[#8d877c] sm:py-8 short-landscape:shrink-0 short-landscape:py-1.5">
+        <div class="mx-auto flex max-w-4xl items-center gap-4 overflow-x-auto rounded-full border border-[#ded8cc] bg-[#e8e3d8]/80 px-4 py-2 shadow-sm short-landscape:gap-2 short-landscape:px-3 short-landscape:py-1 short-landscape:[&_[role=listitem]>span:first-child]:size-6 short-landscape:[&_[role=listitem]>span:last-child]:hidden" aria-label="Premade hat order 1">
+          <span class="shrink-0 text-[9px] font-bold tracking-[0.16em] text-[#8b8579] short-landscape:hidden">ORDER 01</span>
+          <div class="flex min-w-max flex-1 items-center justify-center gap-2 short-landscape:gap-1.5" role="list" aria-label="Blue Hat, White Hat, Green Hat, Yellow Hat, Black Hat, Red Hat, Blue Hat">
+            <span class="blue flex items-center gap-1.5" role="listitem" aria-label="Blue Hat"><span class="grid size-8 place-items-center rounded-full border-2 border-white/70 bg-[var(--hat)] text-[9px] font-bold text-[var(--hat-text)] shadow-sm" aria-hidden="true">BL</span><span class="hidden font-semibold text-[#5f5a52] md:inline">Blue</span></span><span class="text-base text-[#a19a8e]" aria-hidden="true">→</span>
+            <span class="white flex items-center gap-1.5" role="listitem" aria-label="White Hat"><span class="grid size-8 place-items-center rounded-full border-2 border-white/70 bg-[var(--hat)] text-[9px] font-bold text-[var(--hat-text)] shadow-sm" aria-hidden="true">WH</span><span class="hidden font-semibold text-[#5f5a52] md:inline">White</span></span><span class="text-base text-[#a19a8e]" aria-hidden="true">→</span>
+            <span class="green flex items-center gap-1.5" role="listitem" aria-label="Green Hat"><span class="grid size-8 place-items-center rounded-full border-2 border-white/70 bg-[var(--hat)] text-[9px] font-bold text-[var(--hat-text)] shadow-sm" aria-hidden="true">GN</span><span class="hidden font-semibold text-[#5f5a52] md:inline">Green</span></span><span class="text-base text-[#a19a8e]" aria-hidden="true">→</span>
+            <span class="yellow flex items-center gap-1.5" role="listitem" aria-label="Yellow Hat"><span class="grid size-8 place-items-center rounded-full border-2 border-white/70 bg-[var(--hat)] text-[9px] font-bold text-[var(--hat-text)] shadow-sm" aria-hidden="true">YL</span><span class="hidden font-semibold text-[#5f5a52] md:inline">Yellow</span></span><span class="text-base text-[#a19a8e]" aria-hidden="true">→</span>
+            <span class="black flex items-center gap-1.5" role="listitem" aria-label="Black Hat"><span class="grid size-8 place-items-center rounded-full border-2 border-white/70 bg-[var(--hat)] text-[9px] font-bold text-[var(--hat-text)] shadow-sm" aria-hidden="true">BK</span><span class="hidden font-semibold text-[#5f5a52] md:inline">Black</span></span><span class="text-base text-[#a19a8e]" aria-hidden="true">→</span>
+            <span class="red flex items-center gap-1.5" role="listitem" aria-label="Red Hat"><span class="grid size-8 place-items-center rounded-full border-2 border-white/70 bg-[var(--hat)] text-[9px] font-bold text-[var(--hat-text)] shadow-sm" aria-hidden="true">RD</span><span class="hidden font-semibold text-[#5f5a52] md:inline">Red</span></span><span class="text-base text-[#a19a8e]" aria-hidden="true">→</span>
+            <span class="blue flex items-center gap-1.5" role="listitem" aria-label="Blue Hat"><span class="grid size-8 place-items-center rounded-full border-2 border-white/70 bg-[var(--hat)] text-[9px] font-bold text-[var(--hat-text)] shadow-sm" aria-hidden="true">BL</span><span class="hidden font-semibold text-[#5f5a52] md:inline">Blue</span></span>
           </div>
         </div>
-        <div class="footer-meta">
-          <p><span class="cursor-icon" aria-hidden="true">↖</span> Select a hat to explore its mindset &amp; prompts</p>
+        <div class="mt-3 hidden items-center justify-between sm:flex short-landscape:!hidden">
+          <p><span class="mr-2 inline-grid size-6 place-items-center rounded-full border border-[#d6d0c5] text-[#45423d]" aria-hidden="true">↖</span>Select a hat to explore its mindset &amp; prompts</p>
           <p>Based on Edward de Bono's thinking framework</p>
         </div>
       </footer>
     </main>
 
-    <dialog class="hat-dialog" aria-labelledby="dialog-title">
-      <div class="dialog-accent"></div>
-      <div class="dialog-content">
-        <button class="close-button" type="button" aria-label="Close dialog">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+    <dialog class="hat-dialog m-auto max-h-[calc(100dvh-2rem)] w-[min(600px,calc(100%-2rem))] overflow-y-auto rounded-lg bg-[#fbf9f3] p-0 text-[#191919] shadow-2xl short-landscape:max-h-[calc(100dvh-1rem)] short-landscape:w-[min(760px,calc(100%-1rem))]" aria-labelledby="dialog-title">
+      <div class="h-2 bg-[var(--dialog-color)] short-landscape:h-1"></div>
+      <div class="relative p-6 sm:p-10 short-landscape:grid short-landscape:grid-cols-[minmax(190px,0.8fr)_minmax(0,1.2fr)] short-landscape:gap-x-5 short-landscape:p-4">
+        <button class="close-button absolute right-5 top-5 grid size-9 place-items-center rounded-full border border-[#ded9cf] transition hover:bg-[#eeeae1] focus-visible:outline-2 focus-visible:outline-offset-2 short-landscape:right-2.5 short-landscape:top-2.5 short-landscape:size-7" type="button" aria-label="Close dialog">
+          <svg class="size-4 fill-none stroke-current [stroke-width:1.7]" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
         </button>
-        <div class="dialog-heading">
-          <div class="mini-hat hat-art" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></div>
-          <div><p class="dialog-kicker"></p><h2 id="dialog-title"></h2><p class="dialog-tagline"></p></div>
+        <div class="flex items-center gap-4 pr-10 sm:gap-6 short-landscape:col-start-1 short-landscape:row-start-1 short-landscape:gap-3 short-landscape:pr-0">
+          <div class="hat-art relative m-0 h-20 w-20 shrink-0 [--hat-color:var(--dialog-color)] sm:h-[85px] sm:w-[92px] short-landscape:h-14 short-landscape:w-14" aria-hidden="true"><span class="hat-crown"></span><span class="hat-band"></span><span class="hat-brim"></span></div>
+          <div><p class="dialog-kicker mb-1.5 text-[9px] font-bold tracking-[0.2em] text-[#8b857c] short-landscape:mb-1 short-landscape:text-[9px]"></p><h2 id="dialog-title" class="font-display text-3xl font-semibold italic leading-none sm:text-4xl short-landscape:text-[28px]"></h2><p class="dialog-tagline mt-2 text-sm text-[#777168] short-landscape:mt-1 short-landscape:text-xs"></p></div>
         </div>
-        <p class="dialog-description"></p>
-        <div class="prompt-section">
-          <p class="prompt-label">TRY ASKING</p>
-          <div class="prompt-list"></div>
+        <p class="dialog-description my-6 text-sm leading-relaxed text-[#514d47] sm:my-7 short-landscape:col-start-1 short-landscape:row-start-2 short-landscape:my-2 short-landscape:text-[13px] short-landscape:leading-snug"></p>
+        <div class="border-t border-[#dfd9cf] pt-5 short-landscape:col-start-2 short-landscape:row-start-1 short-landscape:row-span-2 short-landscape:pt-3">
+          <p class="mb-2 text-[9px] font-bold tracking-[0.2em] text-[#8b857c] short-landscape:mb-1 short-landscape:text-[10px]">TRY ASKING</p>
+          <div class="prompt-list grid gap-2 short-landscape:gap-1 short-landscape:[&>*]:gap-2 short-landscape:[&>*]:px-2.5 short-landscape:[&>*]:py-2 short-landscape:[&>*]:text-[13px]"></div>
         </div>
-        <p class="dialog-tip"><strong>Best used when</strong><span></span></p>
+        <p class="dialog-tip mt-5 flex gap-3 border-l-[3px] border-[var(--dialog-color)] bg-[color-mix(in_srgb,var(--dialog-color),white_90%)] px-4 py-3 text-xs leading-relaxed short-landscape:col-start-2 short-landscape:row-start-3 short-landscape:mt-2 short-landscape:gap-2 short-landscape:px-2.5 short-landscape:py-2.5 short-landscape:text-xs short-landscape:leading-snug"><strong class="shrink-0 text-[9px] uppercase tracking-wider short-landscape:text-[9px]">Best used when</strong><span></span></p>
       </div>
     </dialog>
 
