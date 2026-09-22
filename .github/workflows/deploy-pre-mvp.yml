@@ -1,0 +1,65 @@
+name: Deploy pre-MVP prototype
+
+on:
+  push:
+    branches:
+      - exp1
+    paths:
+      - "exp1/**"
+      - ".github/workflows/deploy-pre-mvp.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Install dependencies
+        working-directory: exp1
+        run: npm ci
+
+      - name: Build prototype
+        working-directory: exp1
+        run: npm run build
+
+      - name: Assemble Pages site
+        run: |
+          mkdir -p _site/pre-mvp
+          cp exp1/index.html exp1/app.js _site/pre-mvp/
+          cp -R exp1/dist _site/pre-mvp/dist
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}pre-mvp/
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

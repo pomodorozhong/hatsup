@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+@source "./index.html";
+@source "./app.js";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-display: "Playfair Display", serif;
+}
+
+@custom-variant short-landscape (@media (orientation: landscape) and (max-height: 500px));
+
+@layer base {
+  html { @apply bg-[#f5f1e8] text-[#191919] antialiased; }
+  button { @apply cursor-pointer; }
+}
+
+/* Shared theme tokens for cards, illustrations, and the order legend. */
+.white { --hat: #ece9df; --hat-text: #191919; }
+.red { --hat: #ce3e34; --hat-text: #fff; }
+.black { --hat: #292929; --hat-text: #fff; }
+.yellow { --hat: #edbd2e; --hat-text: #191919; }
+.green { --hat: #368967; --hat-text: #fff; }
+.blue { --hat: #367cae; --hat-text: #fff; }
+
+.paper-texture {
+  background: radial-gradient(circle at 8% 6%, rgb(255 255 255 / 75%), transparent 23rem), #f5f1e8;
+}
+
+/* The illustrated hat is the only component that benefits from custom geometry. */
+.hat-art {
+  --hat-color: var(--hat);
+  filter: drop-shadow(0 13px 8px rgb(22 22 22 / 17%));
+}
+
+.hat-dialog .hat-art { --hat-color: var(--dialog-color); }
+
+.hat-card.is-active {
+  color: var(--hat-text);
+}
+
+.hat-card.is-active::before {
+  opacity: 1;
+  background: color-mix(in srgb, var(--hat), black 10%);
+}
+
+.hat-card.is-active > span:first-child,
+.hat-card.is-active .tagline {
+  color: currentColor;
+}
+
+.hat-card.is-active .tagline {
+  opacity: 0.72;
+}
+
+.hat-card.is-active .hat-art {
+  --hat-color: color-mix(in srgb, var(--hat), white 34%);
+  filter: drop-shadow(0 14px 9px rgb(22 22 22 / 30%));
+  transform: translateY(-0.375rem) rotate(-2deg);
+}
+
+.hat-card.is-active .arrow {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.hat-chip {
+  display: inline-flex;
+  min-height: 2.25rem;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  border: 1px solid color-mix(in srgb, var(--hat), black 14%);
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--hat), white 70%);
+  padding: 0.3rem 0.65rem 0.3rem 0.45rem;
+  color: #5f5a52;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  line-height: 1;
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.hat-chip:hover {
+  border-color: color-mix(in srgb, var(--hat), black 26%);
+  background: color-mix(in srgb, var(--hat), white 54%);
+  transform: translateY(-1px);
+}
+
+.hat-chip:focus-visible {
+  outline: 2px solid var(--hat);
+  outline-offset: -3px;
+}
+
+.hat-chip.is-active {
+  border-color: color-mix(in srgb, var(--hat), black 16%);
+  background: var(--hat);
+  color: var(--hat-text);
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--hat-text), transparent 65%), 0 2px 5px rgb(22 22 22 / 20%);
+  transform: translateY(-1px);
+}
+
+.hat-chip-icon {
+  position: relative;
+  display: inline-block;
+  width: 1.35rem;
+  height: 1rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 1px rgb(22 22 22 / 18%));
+}
+
+.hat-chip-icon > span {
+  position: absolute;
+  width: 62%;
+  height: 58%;
+  left: 19%;
+  top: 8%;
+  border-radius: 45% 45% 15% 15% / 25% 25% 12% 12%;
+  background: var(--hat);
+  border: 1px solid color-mix(in srgb, var(--hat), black 18%);
+}
+
+.hat-chip-icon::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 68%;
+  height: 18%;
+  left: 16%;
+  top: 56%;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--hat), black 28%);
+}
+
+.hat-chip-icon::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 28%;
+  left: 0;
+  bottom: 2%;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--hat), black 10%);
+}
+
+.hat-chip.is-active .hat-chip-icon > span,
+.hat-chip.is-active .hat-chip-icon::before,
+.hat-chip.is-active .hat-chip-icon::after {
+  border-color: rgb(255 255 255 / 52%);
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 20%);
+}
+
+.hat-order-arrow {
+  color: #a19a8e;
+  font-size: 0.875rem;
+}
+
+.hat-crown {
+  position: absolute;
+  width: 70%;
+  height: 53%;
+  left: 15%;
+  top: 19%;
+  border-radius: 48% 48% 16% 16% / 22% 22% 16% 16%;
+  background: linear-gradient(110deg, color-mix(in srgb, var(--hat-color), white 32%), var(--hat-color) 52%, color-mix(in srgb, var(--hat-color), black 18%));
+  box-shadow: inset 8px 0 12px rgb(255 255 255 / 22%);
+  transform: perspective(80px) rotateX(-5deg);
+}
+
+.hat-band {
+  position: absolute;
+  z-index: 2;
+  width: 72%;
+  height: 15%;
+  left: 14%;
+  top: 61%;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--hat-color), black 28%);
+}
+
+.hat-brim {
+  position: absolute;
+  width: 100%;
+  height: 22%;
+  left: 0;
+  top: 69%;
+  border-radius: 50%;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--hat-color), white 10%), color-mix(in srgb, var(--hat-color), black 14%));
+  transform: perspective(80px) rotateX(54deg);
+  box-shadow: 0 5px 1px color-mix(in srgb, var(--hat-color), black 10%);
+}
+
+.hat-dialog::backdrop {
+  background: rgb(26 25 23 / 68%);
+  backdrop-filter: blur(5px);
+}
+
+.hat-dialog[open] { animation: dialog-enter 200ms ease-out; }
+
+@keyframes dialog-enter {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .hat-chip {
+    min-height: 1.75rem;
+    padding-block: 0.2rem;
+  }
+
+  .hat-order-arrow {
+    font-size: 0.75rem;
+  }
+}
